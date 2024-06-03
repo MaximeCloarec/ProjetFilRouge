@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gourmetbox</title>
+        <link rel="stylesheet" href="../index.css" />
+        <script src="../index.css"></script>
+        <script src="../food.js" defer></script>
+        <meta
+            name="description"
+            content="Votre site de meal Kit près de chez vous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <h1 class="mainTitle">GourmetBox</h1>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarNavDropdown"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="../index.html"
+                                    >Accueil</a
+                                >
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Page Recette
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#"
+                                            >Recettes de la semaine</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="touteRecettes.html"
+                                            >Toute nos recettes</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="lesKitsRepas.html"
+                                    >Les kits repas</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="commentCaMarche.html"
+                                    >Comment ça marche ?</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex">
+                        <a class="icon" href="connexion.html"
+                            ><img
+                                class="iconImg"
+                                src="../img/account_circle.svg"
+                            />
+                        </a>
+                        <a class="icon" href="panier.html"
+                            ><img class="iconImg" src="../img/shopping_cart.svg" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="weekFood">
+                <div class="weekTitle">
+                    <h2>Les recettes à découvrir cette semaine</h2>
+                    <hr class="border border-danger border-2 opacity-50" />
+                </div>
+                <div class="weekDynamic sticky-top">
+                    <button id="prevArrow" class="btn">
+                        
+                        <img
+                            class="arrowSvg"
+                            src="../img/arrow_back_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                        />
+                    </button>
+                    <div class="vr"></div>
+                    <h2 id="weekDates"></h2>
+                    <div class="vr"></div>
+                    <button id="nextArrow" class="btn">
+                        <img
+                            class="arrowSvg"
+                            src="../img/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                        />
+                    </button>
+                </div>
+
+                <div class="foodCardContainer gx-0"></div>
+            </div>
+        </main>
+        <footer>
+            <div class="containerFooter">
+                <img class="logo" src="../img/package.svg" />
+                <div class="pageLink">
+                    <div class="listLink">
+                        <h3 class="titleLink">Page Recette</h3>
+                        <ul>
+                            <a href="#"> <li>Recettes de la semaine</li></a>
+                            <a href="page/touteRecettes.html"
+                                ><li>Toutes nos recettes</li></a
+                            >
+                        </ul>
+                    </div>
+                    <a href="page/lesKitsRepas.html"
+                        ><h3 class="titleLink">Les kits repas</h3></a
+                    >
+                    <a href="page/commentCaMarche.html"
+                        ><h3 class="titleLink">Comment ça marche ?</h3></a
+                    >
+                </div>
+                <div class="socialLink">
+                    <h3>Rejoignez nos réseaux sociaux !</h3>
+                    <div class="socialIcon">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <img src="../img/icons8-facebook.svg" alt=""
+                        /></a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="../img/icons8-instagram.svg" alt=""
+                        /></a>
+                        <a href="https://www.tiktok.com/" target="_blank">
+                            <img src="../img/icons8-tiktok.svg" alt=""
+                        /></a>
+                        <a href="https://twitter.com/" target="_blank">
+                            <img src="../img/icons8-twitter.svg" alt=""
+                        /></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
