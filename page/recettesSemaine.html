@@ -30,8 +30,19 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <h1 class="mainTitle">GourmetBox</h1>
+                <div class="container-fluid" id="container-fluid">
+                    <a class="navbar-brand fs-2">GourmetBox</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarTogglerDemo01"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div
                         class="collapse navbar-collapse"
                         id="navbarNavDropdown"
@@ -57,7 +68,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="#"
+                                        <a
+                                            class="dropdown-item"
+                                            href="#"
                                             >Recettes de la semaine</a
                                         >
                                     </li>
@@ -71,27 +84,47 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="lesKitsRepas.html"
+                                <a
+                                    class="nav-link"
+                                    href="lesKitsRepas.html"
                                     >Les kits repas</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="commentCaMarche.html"
+                                <a
+                                    class="nav-link"
+                                    href="commentCaMarche.html"
                                     >Comment ça marche ?</a
                                 >
                             </li>
+                            <li class="nav-item webHide">
+                                <a class="nav-link" href="connexion.html"
+                                    >Connexion</a
+                                >
+                            </li>
+                            <li class="nav-item webHide">
+                                <a class="nav-link" href="panier.html">Mon panier</a>
+                            </li>
                         </ul>
-                    </div>
-                    <div class="d-flex">
-                        <a class="icon" href="connexion.html"
-                            ><img
-                                class="iconImg"
-                                src="../img/account_circle.svg"
-                            />
-                        </a>
-                        <a class="icon" href="panier.html"
-                            ><img class="iconImg" src="../img/shopping_cart.svg" />
-                        </a>
+                        <div
+                            class="navIcones justify-content-end"
+                            id="navIcones"
+                        >
+                            <a class="icon" href="connexion.html"
+                                ><img
+                                    class="iconImg"
+                                    src="../img/account_circle.svg"
+                                    alt="connexion button"
+                                />
+                            </a>
+                            <a class="icon" href="panier.html"
+                                ><img
+                                    class="iconImg"
+                                    src="../img/shopping_cart.svg"
+                                    alt="account button"
+                                />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
