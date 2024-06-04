@@ -151,8 +151,6 @@ function getDay() {
         } else if (m == 8) {
             MonthText = "Septembre";
         } else if (m == 9) {
-            {
-            }
             MonthText = "Octobre";
         } else if (m == 10) {
             MonthText = "Novembre";
@@ -179,7 +177,6 @@ prevWeekButton.addEventListener("click", () => {
         currentWeek = "platsCurrent";
         nextWeekButton.removeAttribute("disabled");
     }
-    console.log("Ca Marche");
     getFoodList();
     getDay();
 });
@@ -192,7 +189,6 @@ nextWeekButton.addEventListener("click", () => {
         currentWeek = "platsCurrent";
         prevWeekButton.removeAttribute("disabled");
     }
-    console.log("Nickel");
     getFoodList();
     getDay();
 });

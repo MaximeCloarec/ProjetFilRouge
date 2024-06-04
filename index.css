@@ -374,10 +374,10 @@ hr {
 .foodCardContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     grid-area: 2;
     justify-items: center;
     row-gap: 20px;
+    padding: 20px;
 }
 
 .foodFichesImage {
@@ -431,33 +431,46 @@ hr {
         display: block;
     }
     .mainImageText {
-        min-width:  fit-content;
+        min-width: fit-content;
         padding: 5px;
+        margin: 5px;
     }
-    .mainImage{
+    .mainImage {
         min-height: 40vh;
     }
-    .comCardContainer{
+    .comCardContainer {
         align-items: center;
     }
-    .containerFooter{
+    .containerFooter {
         flex-direction: column;
         align-items: center;
     }
-    .carteContainer{
+    .carteContainer {
         flex-direction: column;
     }
-    .pageLink{
+    .pageLink {
         flex-direction: column;
     }
-    .socialLink{
+    .socialLink {
         border-top: solid black;
         border-left: none;
     }
-    .comCardContainer{
+    .comCardContainer {
         flex-direction: column;
     }
-    .newsLetterImgContainer{
+    .newsLetterImgContainer {
         display: none;
+    }
+    .carte p {
+        font-weight: 700;
+    }
+    .carte img {
+        width: 10vw;
+    }
+    .foodCardContainer {
+        grid-template-columns: none;
+    }
+    .foodFichesImage {
+        width: 90vw;
     }
 }
