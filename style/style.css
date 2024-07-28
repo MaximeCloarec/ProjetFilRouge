@@ -1,0 +1,551 @@
+/*---- HTML Mise en page ----*/
+@import url("https://fonts.googleapis.com/css?family=Abril%20Fatface:700|Lato:400");
+
+body {
+    font-family: "Lato";
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Abril Fatface";
+    font-weight: 700;
+}
+
+html {
+    font-size: 100%;
+} /* 16px */
+
+h1 {
+    font-size: 4.21rem; /* 67.36px */
+}
+
+h2 {
+    font-size: 3.158rem; /* 50.56px */
+}
+
+h3 {
+    font-size: 2.369rem; /* 37.92px */
+}
+
+h4 {
+    font-size: 1.777rem; /* 28.48px */
+}
+
+h5 {
+    font-size: 1.333rem; /* 21.28px */
+}
+
+small {
+    font-size: 0.75rem; /* 12px */
+}
+
+:root[data-theme="light"] {
+    --text: #040316;
+    --background: #ecf3e7;
+    --primary: #59d47a;
+    --secondary: #2f6040;
+    --accent: #a35252;
+}
+:root[data-theme="dark"] {
+    --text: #eae9fc;
+    --background: #11180c;
+    --primary: #2ba64c;
+    --secondary: #9fd0b0;
+    --accent: #ad5c5c;
+}
+
+::-webkit-scrollbar{
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--primary);
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--secondary);
+}
+
+/*---- Header + Footer ----*/
+
+main {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+h1 {
+    margin-right: 20px;
+    padding-right: 10px;
+}
+
+.navbar-brand {
+    font-family: "Abril Fatface";
+    font-weight: 700;
+}
+
+.navbar {
+    padding: 0 !important   ;
+    box-shadow: black 0px 10px 15px;
+}
+
+.nav-item {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    padding: 0 20px 0 20px;
+    transition-duration: 1s;
+}
+
+.webHide {
+    display: none;
+}
+
+.navIcones {
+    display: flex;
+    margin-inline-start: auto;
+}
+
+.nav-item:hover {
+    background-color: var(--primary);
+}
+
+.icon {
+    width: fit-content;
+    margin: 0 10px 0 10px;
+}
+
+.iconImg {
+    width: 36px;
+    transition-duration: 1s;
+}
+
+.iconImg:hover {
+    animation: giggle 200ms alternate infinite;
+}
+
+@keyframes giggle {
+    from {
+        transform: rotate(5deg);
+    }
+    to {
+        transform: rotate(-5deg);
+    }
+}
+
+.icon:first-child {
+    border-left: solid black;
+    padding-left: 10px;
+}
+
+.containerFooter {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.pageLink {
+    display: flex;
+    flex-direction: row;
+}
+
+.pageLink a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.titleLink,
+.titleLink + ul {
+    margin: 20px 40px 20px 0;
+}
+
+.socialLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: solid black;
+    padding-left: 20px;
+}
+
+/*---- Page Index ----*/
+
+.mainImage {
+    background-image: url(../img/spencer-davis-5UeN8VrCxvs-unsplash.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainImageText {
+    background-color: var(--accent);
+    width: 30vw;
+    text-align: center;
+    color: var(--background);
+    border-radius: 20px;
+    cursor: default;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+}
+
+.mainPourquoi h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.carteContainer {
+    display: flex;
+}
+
+.carte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.carte img {
+    width: 6vw;
+}
+
+.carte p {
+    text-align: center;
+    width: 50%;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+/*---- Newsletter ----*/
+
+.newsLetter {
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    animation: fadeIn 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateZ(-80px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+.hide {
+    animation: fadeOut 1s ease-out both;
+    display: none;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.newsLetterImgContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.letter {
+    transform: rotate(-45deg);
+    align-self: center;
+    width: 6vw;
+}
+
+.newsLetterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.newsLetterForm button {
+    padding: 4px 6px 4px 6px;
+    color: var(--background);
+    background-color: var(--accent);
+    font-family: "lato";
+    border-radius: 10px;
+    border: solid transparent;
+}
+
+.newsLetterForm input {
+    text-align: center;
+    height: 20px;
+    padding: 20px 0 20px 0;
+}
+
+.newsLetterContainerButton {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.newsLetterContainerButton button {
+    background-image: url(../img/x-square.svg);
+    background-size: cover;
+    padding: 25px;
+    border: none;
+    border-radius: 6px;
+    margin: 20px;
+}
+
+/* ----Commentaire---- */
+
+.comContainer {
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.comCardContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.comCard {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 250px;
+    height: 250px;
+    color: var(--text);
+}
+
+.comCard p {
+    width: fit-content;
+    text-align: center;
+}
+
+/* ---- recetteSemaine---- */
+
+.arrowSvg {
+    width: 40px;
+    background-color: var(--accent);
+    border-radius: 100%;
+}
+
+.weekTitle {
+    grid-area: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+hr {
+    width: 30vw;
+}
+
+.weekDynamic {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary);
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    top: 20px;
+}
+
+#weekDates {
+    margin: 20px;
+}
+
+.foodCardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: 2;
+    justify-items: center;
+    row-gap: 20px;
+    padding: 20px;
+}
+
+.foodFichesImage {
+    width: 20vw;
+    border-radius: 20px 20px 0 0;
+}
+
+.foodFichesTitle {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.foodFichesBody {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: var(--accent);
+    border: solid black 2px;
+    border-radius: 20px;
+    color: white;
+    animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+.foodFicheTextInfoContainer {
+    margin-left: 20px;
+}
+
+@keyframes puff-in-center {
+    0% {
+        transform: scale(2);
+        filter: blur(4px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/* ----Login/Connexion---- */
+.loginContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.loginForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30vw;   
+    margin: 10vh 0 10vw 0;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+}
+
+.label,
+.usernameLogin,
+.passwordLogin {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+}
+
+.rememberMe input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.loginButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+.redirection{
+    text-decoration: none;
+}
+/* ----MediaQuery---- */
+
+@media (max-width: 992px) {
+    .nav-item {
+        text-align: left;
+    }
+    #navIcones {
+        display: none;
+    }
+    .webHide {
+        display: block;
+    }
+    .mainImageText {
+        min-width: fit-content;
+        padding: 5px;
+        margin: 5px;
+    }
+    .mainImage {
+        min-height: 40vh;
+    }
+    .comCardContainer {
+        align-items: center;
+    }
+    .containerFooter {
+        flex-direction: column;
+        align-items: center;
+    }
+    .carteContainer {
+        flex-direction: column;
+    }
+    .pageLink {
+        flex-direction: column;
+    }
+    .socialLink {
+        border-top: solid black;
+        border-left: none;
+    }
+    .comCardContainer {
+        flex-direction: column;
+    }
+    .newsLetterImgContainer {
+        display: none;
+    }
+    .carte p {
+        font-weight: 700;
+    }
+    .carte img {
+        width: 10vw;
+    }
+    .foodCardContainer {
+        grid-template-columns: none;
+    }
+    .foodFichesImage {
+        width: 90vw;
+    }
+}
