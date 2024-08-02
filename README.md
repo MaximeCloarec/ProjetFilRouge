@@ -34,6 +34,6 @@ Les deux seules tables sont plats et users
 La page Recette Semaine va chercher avec l'api les plats pour les afficher en fonction de s'il était de la semaine dernière, cette semaine ou pour la semaine prochaine.</br>
 
 ## A faire
-- [ ] Transfomrer mon code pour être objet friendly
+- [ ] Transformer mon code pour être objet friendly
 - [ ] Page de compte utilisateur
 - [ ] Finir toutes les pages
