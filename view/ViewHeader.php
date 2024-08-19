@@ -70,7 +70,6 @@ function viewHeader($message)
                 </div>
             </nav>
         </header>
-        <?php var_dump($_SESSION)?>
     <?php
     return ob_get_clean();
 }

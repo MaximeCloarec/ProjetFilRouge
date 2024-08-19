@@ -34,3 +34,7 @@ closebtn.addEventListener("click", function () {
 setTimeout(function () {
     document.getElementById("newsLetter").classList.remove("hide");
 }, 3000);
+
+function redirection(){
+    window.location.href="/GourmetBox/Deconnexion"
+}

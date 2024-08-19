@@ -7,6 +7,8 @@ CREATE TABLE `users` (
 	`postal_users` VARCHAR(6) DEFAULT NULL,
 	`country_users` VARCHAR(6) DEFAULT 'France',
 	`rememberMe_users` VARCHAR(255),
+	`name_users` VARCHAR(45),
+	`firstname_users` VARCHAR(45),
 	PRIMARY KEY(`id_users`)
 );
 
