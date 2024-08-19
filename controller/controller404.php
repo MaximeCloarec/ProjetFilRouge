@@ -1,3 +1,3 @@
-<?php echo viewHeader();
-echo view404();
-echo viewFooter();
+<?php
+$user = new Users();
+echo $user->getView()->setBody(view404())->render();

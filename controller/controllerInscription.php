@@ -1,10 +1,11 @@
-<?php include "function.php";
+<?php 
 include "model/modelInscription.php";
 ?>
 
-<?php echo viewHeader();
-echo viewInscription(inscriptionForm());
-echo viewFooter(); ?>
+<?php 
+$user = new Users();
+echo $user->getView()->setBody(viewInscription(inscriptionForm()))->render();
+?>
 
 <?php function inscriptionForm()
 {

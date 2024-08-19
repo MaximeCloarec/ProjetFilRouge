@@ -493,6 +493,14 @@ hr {
 .redirection{
     text-decoration: none;
 }
+
+/* ----Account---- */
+.compteContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 /* ----MediaQuery---- */
 
 @media (max-width: 992px) {

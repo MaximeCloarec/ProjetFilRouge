@@ -1,5 +1,5 @@
 <?php
-function viewHeader()
+function viewHeader($message)
 {
 
     ob_start();
@@ -53,6 +53,7 @@ function viewHeader()
                                 <a class="nav-link" href="page/commentCaMarche.html">Comment ça marche ?</a>
                             </li>
                             <li class="nav-item webHide">
+                                
                                 <a class="nav-link" href="page/connexion.html">Connexion</a>
                             </li>
                             <li class="nav-item webHide">
@@ -60,7 +61,7 @@ function viewHeader()
                             </li>
                         </ul>
                         <div class="navIcones justify-content-end" id="navIcones">
-                            <a class="icon" href="/GourmetBox/Login"><img class="iconImg" src="img/account_circle.svg" alt="connexion button" />
+                            <a class="icon" href=<?php echo $message?>><img class="iconImg" src="img/account_circle.svg" alt="connexion button" />
                             </a>
                             <a class="icon" href="page/panier.html"><img class="iconImg" src="img/shopping_cart.svg" alt="account button" />
                             </a>
@@ -69,6 +70,7 @@ function viewHeader()
                 </div>
             </nav>
         </header>
+        <?php var_dump($_SESSION)?>
     <?php
     return ob_get_clean();
 }

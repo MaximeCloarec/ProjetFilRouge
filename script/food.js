@@ -4,19 +4,6 @@ let currentWeek = "platsCurrent";
 const prevWeekButton = document.getElementById("prevArrow");
 const nextWeekButton = document.getElementById("nextArrow");
 
-// async function readUserData() {
-//     const listeRef = dataBaseRef.child(`${currentWeek}`);
-//     let valueTab = [];
-//     listeRef.on("value", (snap) => {
-//         snap.forEach((childSnap) => {
-//             const value = childSnap.val();
-//             valueTab.push(value);
-//         });
-//         generateFoodList(valueTab);
-//     });
-// }
-
-// readUserData();
 // //Fonction asynchrone pour récupérer la liste des plats depuis l'API
 async function getFoodList() {
     // Envoi d'une requête HTTP GET à l'URL de l'API

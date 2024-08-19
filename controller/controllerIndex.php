@@ -1,3 +1,3 @@
-<?php echo viewHeader();
-echo viewIndex();
-echo viewFooter();
+<?php 
+$user = new Users();
+echo $user->getView()->setBody(viewIndex())->render();
