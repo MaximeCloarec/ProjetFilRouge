@@ -592,4 +592,7 @@ hr {
     .foodFichesImage {
         width: 90vw;
     }
+    .loginForm{
+        width: 70vw;
+    }
 }

@@ -2,16 +2,16 @@
     ob_start();
     ?>
         <main>
-            <div class="mainImage">
-                <div class="mainImageText">
+            <section class="mainImage">
+                <article class="mainImageText">
                     <h2>
                         Découvrez l'exquise simplicité avec GourmetBox ! <br />
                         Votre passeport vers une expérience culinaire
                         inoubliable
                     </h2>
-                </div>
-            </div>
-            <div class="mainPourquoi">
+                </article>
+            </section>
+            <section class="mainPourquoi">
                 <h2>
                     Tellement délicieux et simple !<br />
                     Comment ca marche ?
@@ -49,7 +49,7 @@
                         </p>
                     </article>
                 </div>
-            </div>
+            </section>
             <div class="comContainer">
                 <h2>
                     Pas encore convaincu ?<br />

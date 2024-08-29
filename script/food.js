@@ -1,6 +1,6 @@
 // Déclaration des variables globale
 let foodList;
-let currentWeek = "platsCurrent";
+let currentWeek = "curr";
 const prevWeekButton = document.getElementById("prevArrow");
 const nextWeekButton = document.getElementById("nextArrow");
 
@@ -8,7 +8,7 @@ const nextWeekButton = document.getElementById("nextArrow");
 async function getFoodList() {
     // Envoi d'une requête HTTP GET à l'URL de l'API
     const response = await fetch(
-        `http://localhost/GourmetBox/API/platsAPI.php`,
+        "http://localhost/GourmetBox/API/platsAPI.php",
         { method: "GET" }
     );
     console.log(response);
@@ -18,12 +18,16 @@ async function getFoodList() {
     // Appel de la fonction pour générer les fiches de plats
     generateFoodList(foodList);
     console.log(foodList);
+    console.log(currentWeek);
 }
-
 
 getFoodList();
 // Fonction pour générer les fiches de plats dans le HTML
 function generateFoodList(foodList) {
+    //Filtrage
+    const filteredFoodList = foodList.filter(
+        (plats) => plats.week_plats === currentWeek
+    );
     // Sélection du conteneur HTML pour les fiches de plats
     const foodFichesContainer = document.querySelector(".foodCardContainer");
     // Vider le conteneur avant d'ajouter de nouvelles fiches
@@ -31,14 +35,14 @@ function generateFoodList(foodList) {
         foodFichesContainer.removeChild(foodFichesContainer.firstChild);
     }
     // Vérification si la liste des plats existe et n'est pas vide
-    if (foodList && foodList.length > 0) {
+    if (filteredFoodList && filteredFoodList.length > 0) {
         // Boucle à travers chaque plat de la liste
-        for (let i = 0; i < foodList.length; i++) {
+        for (let i = 0; i < filteredFoodList.length; i++) {
             // Extraction des détails du plat
-            const fiches = foodList[i];
+            const fiches = filteredFoodList[i];
             //Création Div Text
             const foodFichesBody = document.createElement("div");
-            foodFichesBody.dataset.id = foodList[i].id_plats;
+            foodFichesBody.dataset.id = filteredFoodList[i].id_plats;
             foodFichesBody.classList = "foodFichesBody";
             // Création des balises
             // Balises Images
@@ -93,10 +97,10 @@ function getDay() {
         dayToMonday = dayOfWeek - 1;
     }
 
-    if (currentWeek == "platsCurrent") {
+    if (currentWeek == "curr") {
         monday = new Date(currentDate);
         monday.setDate(currentDate.getDate() - dayToMonday);
-    } else if (currentWeek == "platsNext") {
+    } else if (currentWeek == "next") {
         monday = new Date(currentDate);
         monday.setDate(currentDate.getDate() - dayToMonday + 7);
     } else {
@@ -106,10 +110,10 @@ function getDay() {
     //GetSunday
 
     const daysToSunday = 7 - dayOfWeek;
-    if (currentWeek == "platsCurrent") {
+    if (currentWeek == "curr") {
         sunday = new Date(currentDate);
         sunday.setDate(currentDate.getDate() + daysToSunday);
-    } else if (currentWeek == "platsNext") {
+    } else if (currentWeek == "next") {
         sunday = new Date(currentDate);
         sunday.setDate(currentDate.getDate() + daysToSunday + 7);
     } else {
@@ -180,25 +184,25 @@ function getDay() {
 getDay();
 
 prevWeekButton.addEventListener("click", () => {
-    if (currentWeek === "platsCurrent") {
-        currentWeek = "platsPrevious";
+    if (currentWeek === "curr") {
+        currentWeek = "prev";
         prevWeekButton.setAttribute("disabled", "");
-    } else if (currentWeek === "platsNext") {
-        currentWeek = "platsCurrent";
+    } else if (currentWeek === "next") {
+        currentWeek = "curr";
         nextWeekButton.removeAttribute("disabled");
     }
-    readUserData();
+    generateFoodList(foodList);
     getDay();
 });
 
 nextWeekButton.addEventListener("click", () => {
-    if (currentWeek === "platsCurrent") {
-        currentWeek = "platsNext";
+    if (currentWeek === "curr") {
+        currentWeek = "next";
         nextWeekButton.setAttribute("disabled", "");
-    } else if (currentWeek === "platsPrevious") {
-        currentWeek = "platsCurrent";
+    } else if (currentWeek === "prev") {
+        currentWeek = "curr";
         prevWeekButton.removeAttribute("disabled");
     }
-    readUserData();
+    generateFoodList(foodList);
     getDay();
 });

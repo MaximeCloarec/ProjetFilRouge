@@ -54,7 +54,7 @@ function viewHeader($message)
                             </li>
                             <li class="nav-item webHide">
                                 
-                                <a class="nav-link" href="page/connexion.html">Connexion</a>
+                                <a class="nav-link" href=<?php echo $message?>>Connexion</a>
                             </li>
                             <li class="nav-item webHide">
                                 <a class="nav-link" href="page/panier.html">Mon panier</a>

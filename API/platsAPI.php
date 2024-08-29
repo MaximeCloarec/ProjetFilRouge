@@ -3,9 +3,10 @@
 // Format des données envoyées
 header("Content-Type: application/json; charset=UTF-8");
 // Méthode autorisée, ici POST, mais ça peut être GET, PUT ou DELETE
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Methods: GET");
 // Durée de vie de la requête
 header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Origin: *");
 // Entêtes autorisées
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-AllowHeaders, Authorization, X-Requested-With");
 
