@@ -3,8 +3,8 @@
     ob_start();
 ?>
     <main>
-        <div class="container">
-            <h3>Vous êtes bien déconnecté, vous allez être redirigé vers la page d'accueil</h3>
+        <div class="containerDeco">
+            <h3 class="fs-1">Vous êtes bien déconnecté, vous allez être redirigé vers la page d'accueil</h3>
         </div>
     </main>
     <script>

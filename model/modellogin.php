@@ -17,7 +17,7 @@
 
 <?php function getInfoLogin($bdd, $login)
 {
-    $req = $bdd->prepare("SELECT id_users,login_users,numberstreet_users,city_users,postal_users,country_users,name_users,firstname_users FROM users WHERE login_users=?");
+    $req = $bdd->prepare("SELECT id_users,login_users,numberstreet_users,city_users,postal_users,country_users,name_users,firstname_users,users_role FROM users JOIN role ON users.id_role = role.id_role WHERE login_users=?");
     $req->bindParam(1, $login, PDO::PARAM_STR);
     $req->execute();
     return $req->fetch(PDO::FETCH_ASSOC);

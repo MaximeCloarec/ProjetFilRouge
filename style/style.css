@@ -58,7 +58,7 @@ small {
     --accent: #ad5c5c;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 14px;
 }
 
@@ -67,12 +67,11 @@ small {
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background: var(--primary);
-
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
     background: var(--secondary);
 }
 
@@ -383,6 +382,8 @@ hr {
     margin-bottom: 20px;
     border-radius: 20px;
     top: 20px;
+    position: sticky;
+    z-index: 1020;
 }
 
 #weekDates {
@@ -437,7 +438,7 @@ hr {
 }
 
 /* ----Login/Connexion---- */
-.loginContainer{
+.loginContainer {
     display: flex;
     justify-content: center;
 }
@@ -447,7 +448,7 @@ hr {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30vw;   
+    width: 30vw;
     margin: 10vh 0 10vw 0;
 }
 
@@ -478,7 +479,7 @@ hr {
 .loginButton {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     border: none;
     border-radius: 4px;
     color: white;
@@ -490,52 +491,123 @@ hr {
     background-color: #45a049;
 }
 
-.redirection{
+.redirection {
     text-decoration: none;
 }
 
 /* ----Account---- */
-.accountContainer{
+.accountContainer {
     padding: 20px;
 }
 
-.accountHead{
+.accountInner {
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accountHead {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-.accountImg{
-    border-radius: 100%;
+.accountImg {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
 }
 
-.accountBody{
-    margin: 20px;
+.accountBody {
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
 }
 
-.accountDeconnexion{
-    text-decoration: none;
-    color: var(--text);
-    background-color: var(--accent);
-    padding: 10px;
-    margin: 20px;
-    border-radius: 20px;
+.accountBody h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #4caf50;
 }
 
-.accountModify{
-    text-decoration: none;
-    color: var(--text);
-    background-color: var(--accent);
-    padding: 10px;
-    margin: 20px;
-    border-radius: 20px;
+.accountBody p {
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
-.accountAction{
+.accountAction {
     display: flex;
     justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
 }
 
+.accountDeconnexion,
+.accountModify {
+    color: white;
+    background-color: #a35252;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accountDeconnexion:hover,
+.accountModify:hover {
+    background-color: #9c7373;
+}
+
+/* ----404 Page---- */
+.container404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    padding: 20px;
+}
+
+.title404 {
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.subtitle404 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.btn-home404 {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.btn-home404:hover {
+    background-color: #c0392b;
+}
+
+/* ----Deconnexion---- */
+
+.containerDeco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
 
 /* ----MediaQuery---- */
 
@@ -592,7 +664,7 @@ hr {
     .foodFichesImage {
         width: 90vw;
     }
-    .loginForm{
+    .loginForm {
         width: 70vw;
     }
 }

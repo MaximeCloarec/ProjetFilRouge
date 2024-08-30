@@ -10,6 +10,7 @@ include "model/modelUsers.php";
 
 $url = parse_url($_SERVER["REQUEST_URI"]);
 $path = isset($url["path"]) ? $url["path"] : "/";
+
 if (empty($_SESSION["status"])) {
     if (isset($_COOKIE["rememberMe"])) {
         $bdd = connectionBDD();

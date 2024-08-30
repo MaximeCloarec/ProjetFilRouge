@@ -51,12 +51,12 @@ class View
         $this->message = $message;
         return $this;
     }
-    
+
     public function render(): string
     {
-        if(empty($_SESSION["status"])){
+        if (empty($_SESSION["status"])) {
             $this->setMessage("/GourmetBox/Login");
-        }else{
+        } else {
             $this->setMessage("/GourmetBox/Account");
         }
         $this->setHeader(viewHeader($this->getMessage()))->setFooter(viewFooter());
@@ -65,23 +65,39 @@ class View
     public function showAccount()
     {
         ob_start() ?>
-        <div class="accountHead">
-            <h2 class="fs-1">Mon compte</h2>
-            <img class="accountImg" src="https://picsum.photos/200/200" alt="">
-            <p class="fs-2"><?php echo $_SESSION["infoTab"]["login_users"] ?></p>
-            <p class="fs-2"><?php echo $_SESSION["infoTab"]["name_users"] . " " . $_SESSION["infoTab"]["firstname_users"] ?> </p>
-        </div>
-        <div class="accountBody">
-            <h3 class="fw-bold">Mes coordonnées</h3>
-            <p>Pays : <?php echo $_SESSION["infoTab"]["country_users"] ?></p>
-            <p>Code postal : <?php echo $_SESSION["infoTab"]["postal_users"] ?></p>
-            <p>Ville : <?php echo $_SESSION["infoTab"]["city_users"] ?></p>
-            <p>Numéro de rue : <?php echo $_SESSION["infoTab"]["numberstreet_users"] ?></p>
-            <div class="accountAction">
-                <button onclick="redirection()" class="accountDeconnexion fs-4" href="/GourmetBox/Deconnexion">Se déconnecter</button>
-                <form action="" method="post">
-                    <button class="accountModify fs-4" formmethod="POST" type="submit" value="<?php echo $_SESSION["infoTab"]["id_users"] ?>" name="modifier">Modifier Information</button>
-                </form>
+        <div class="accountContainer">
+            <div class="accountInner">
+                <div class="accountHead">
+                    <h2 class="fs-1">Mon compte</h2>
+                    <img class="accountImg" src="https://picsum.photos/200/200" alt="Photo de profil">
+                    <p class="fs-2"><?php echo $_SESSION["infoTab"]["login_users"] ?></p>
+                    <p class="fs-2"><?php echo $_SESSION["infoTab"]["name_users"] . " " . $_SESSION["infoTab"]["firstname_users"] ?></p>
+                </div>
+                <div class="accountBody">
+                    <h3 class="fw-bold">Mes coordonnées</h3>
+                    <p><strong>Pays :</strong> <?php echo $_SESSION["infoTab"]["country_users"] ?></p>
+                    <p><strong>Code postal :</strong> <?php echo $_SESSION["infoTab"]["postal_users"] ?></p>
+                    <p><strong>Ville :</strong> <?php echo $_SESSION["infoTab"]["city_users"] ?></p>
+                    <p><strong>Numéro de rue :</strong> <?php echo $_SESSION["infoTab"]["numberstreet_users"] ?></p>
+                    <div class="accountAction">
+                        <button onclick="redirection()" class="accountDeconnexion fs-4">Se déconnecter</button>
+                        <form action="" method="post">
+                            <button class="accountModify fs-4" formmethod="POST" type="submit" value="<?php echo $_SESSION["infoTab"]["id_users"] ?>" name="modifier">Modifier Information</button>
+                        </form>
+                        <?php
+                        if ($_SESSION["infoTab"]["users_role"] == "admin") {
+                        ?>
+                            <button onclick="adminpage()" class="accountModify fs-4">Page admin</button>
+                            <script>
+                                function adminpage() {
+                                    window.location.href = "/GourmetBox/Admin"
+                                }
+                            </script>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     <?php
@@ -90,26 +106,30 @@ class View
     public function modifyAccount()
     {
         ob_start() ?>
-        <form action="" method="post">
-            <div class="accountHead">
-                <h2 class="fs-1">Mon compte</h2>
-                <img class="accountImg" src="https://picsum.photos/200/200" alt="">
-                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
-                <p class="fs-2"><?php echo $_SESSION["infoTab"]["login_users"] ?></p>
-                <p>Nom :</p><input type="text" value="<?php echo $_SESSION["infoTab"]["name_users"] ?>" name="name_users">
-                <p>Prenom :</p><input type="text" value="<?php echo $_SESSION["infoTab"]["firstname_users"] ?>" name="firstname_users">
+        <div class="accountContainer">
+            <div class="accountInner">
+                <form action="" method="post">
+                    <div class="accountHead">
+                        <h2 class="fs-1">Mon compte</h2>
+                        <img class="accountImg" src="https://picsum.photos/200/200" alt="">
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+                        <p class="fs-2"><?php echo $_SESSION["infoTab"]["login_users"] ?></p>
+                        <p>Nom :</p><input type="text" value="<?php echo $_SESSION["infoTab"]["name_users"] ?>" name="name_users">
+                        <p>Prenom :</p><input type="text" value="<?php echo $_SESSION["infoTab"]["firstname_users"] ?>" name="firstname_users">
+                    </div>
+                    <div class="accountBody">
+                        <h3 class="fw-bold">Mes coordonnées</h3>
+                        <p>Pays : <?php echo $_SESSION["infoTab"]["country_users"] ?></p>
+                        <p>Code postal : <?php echo $_SESSION["infoTab"]["postal_users"] ?></p> <input type="text" value="<?php echo $_SESSION["infoTab"]["postal_users"] ?>" name="postal_users">
+                        <p>Ville : <?php echo $_SESSION["infoTab"]["city_users"] ?></p><input type="text" value="<?php echo $_SESSION["infoTab"]["city_users"] ?>" name="city_users">
+                        <p>Numéro de rue : <?php echo $_SESSION["infoTab"]["numberstreet_users"] ?></p><input type="text" value="<?php echo $_SESSION["infoTab"]["numberstreet_users"] ?>" name="numberstreet_users">
+                        <div class="accountAction">
+                            <button class="accountModifiy fs-4" type="sumbit" value="<?php echo $_SESSION["infoTab"]["id_users"] ?>" name="valider">Valider</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="accountBody">
-                <h3 class="fw-bold">Mes coordonnées</h3>
-                <p>Pays : <?php echo $_SESSION["infoTab"]["country_users"] ?></p>
-                <p>Code postal : <?php echo $_SESSION["infoTab"]["postal_users"] ?></p> <input type="text" value="<?php echo $_SESSION["infoTab"]["postal_users"] ?>" name="postal_users">
-                <p>Ville : <?php echo $_SESSION["infoTab"]["city_users"] ?></p><input type="text" value="<?php echo $_SESSION["infoTab"]["city_users"] ?>" name="city_users">
-                <p>Numéro de rue : <?php echo $_SESSION["infoTab"]["numberstreet_users"] ?></p><input type="text" value="<?php echo $_SESSION["infoTab"]["numberstreet_users"] ?>" name="numberstreet_users">
-                <div class="accountAction">
-                    <button class="accountModifiy fs-4" type="sumbit" value="<?php echo $_SESSION["infoTab"]["id_users"] ?>" name="valider">Valider</button>
-                </div>
-            </div>
-        </form>
+        </div>
 <?php
         return ob_get_clean();
     }

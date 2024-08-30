@@ -8,7 +8,7 @@ const nextWeekButton = document.getElementById("nextArrow");
 async function getFoodList() {
     // Envoi d'une requête HTTP GET à l'URL de l'API
     const response = await fetch(
-        "http://localhost/GourmetBox/API/platsAPI.php",
+        "http://192.168.1.36/GourmetBox/API/platsAPI.php",
         { method: "GET" }
     );
     console.log(response);

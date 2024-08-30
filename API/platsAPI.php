@@ -6,7 +6,7 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: GET");
 // Durée de vie de la requête
 header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: http://192.168.1.36/GourmetBox/RecetteSemaine");
 // Entêtes autorisées
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-AllowHeaders, Authorization, X-Requested-With");
 
